@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="description" content="semi face book" >
+  
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="icon" href="https://www.vitoshacademy.com/wp-content/uploads/2015/04/JS.png"> -->
+  
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
+
+<!-- Bootstrap -->
+    
+<style src="css/bootstrap-theme.css"></style>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+     
+  <title> 
+      flipping
+  </title>
+
+  <style>
+        .card {
+        height: 300px;
+        float: left;
+        perspective: 500px;
+        }
+
+        body {
+        background: #eee;
+        font-family: 'comic sans ms';
+        }
+
+        .cont {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        }
+
+        .front , .back {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+        line-height: 300px;
+        color: #03446A;
+        text-align: center;
+        font-size: 60px;
+        border-radius: 5px;
+        backface-visibility: hidden;
+        }
+
+        .back {
+        background: rgb(29, 158, 12);
+        color: white;
+        transform: rotateY( 180deg );
+        }
+
+        .flip {
+        margin-top: 10px;
+        border-radius: 50%;
+        margin-left: 50% ;
+        outline: none;
+        font-size: 20px;
+        }
+  </style>
+  
+  
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+    <body style="margin: 0 0 ;" id="body" onload="flip0()">
+   
+        <div class="card col-lg-3 col-md-3 col-sm-6 ">
+            <div class="cont">
+              <div class="front">
+                Abu Bakr
+              </div>
+              <div class="back">
+                <img src="bkr contact.png" />
+              </div>
+            </div>
+          </div>
+
+          <div class="card col-lg-3 col-md-3 col-sm-6">
+            <div class="cont">
+              <div class="front">
+                Aya
+              </div>
+              <div class="back">
+                Back!
+              </div>
+            </div>
+          </div>
+
+          <div class="card col-lg-3 col-md-3 col-sm-6">
+            <div class="cont">
+              <div class="front">
+                Rana
+              </div>
+              <div class="back">
+                Back!
+              </div>
+            </div>
+          </div>
+
+          <div class="card col-lg-3 col-md-3 col-sm-6">
+            <div class="cont">
+              <div class="front">
+                Esraa
+              </div>
+              <div class="back">
+                Back!
+              </div>
+            </div>
+          </div>
+
+          <button class="flip" onclick="flip()"> flip </button>
+
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+  
+<script>
+var x = 180 , n = 1 ;
+    function flip0() {
+        document.querySelector("#body > div:nth-child(1) > div").style.transform = 'rotateY(' + 360 +'deg )' ;
+        document.querySelector("#body > div:nth-child(2) > div").style.transform = 'rotateY(' + 360 +'deg )' ;
+        document.querySelector("#body > div:nth-child(3) > div").style.transform = 'rotateY(' + 360 +'deg )' ;
+        document.querySelector("#body > div:nth-child(4) > div").style.transform = 'rotateY(' + 360 +'deg )' ;
+    }
+    function flip(){
+        document.querySelector("#body > div:nth-child(1) > div").style.transform = 'rotateY(' + x +'deg )' ;
+        document.querySelector("#body > div:nth-child(2) > div").style.transform = 'rotateY(' + x +'deg )' ;
+        document.querySelector("#body > div:nth-child(3) > div").style.transform = 'rotateY(' + x +'deg )' ;
+        document.querySelector("#body > div:nth-child(4) > div").style.transform = 'rotateY(' + x +'deg )' ;
+
+        document.querySelector('.cont').transition = 'transform 0.5s';
+        console.log(n%2);
+        console.log(x);
+        n++;
+        if (n%2 == 1){
+            x = 180;    
+        }
+        if (n%2 == 0){
+            x = 360;    
+        }
+    }
+    
+
+</script>
+
+</body>
+</html>
